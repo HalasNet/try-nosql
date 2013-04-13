@@ -17,17 +17,18 @@ Program components as follows:
 - data holders: person, person name, plural field, relationship, activity
 - dao interfaces: person, relationship, job, activity
 - dao implementations: mongodb, couchdb
-- job: activity processor
+- job: activity processor (using RabbitMQ)
 
 Tests exercise various components.
 
 Also a load test which simulates a social application.
 
-Concurrently:
+Concurrently, performs following operations:
 - creates people (i.e. register)
 - follows people
 - posts activities
+- generates activity feeds
 
 Reports:
-- operations per second
+- operations per second, for each above operation
 - for mongo and couch (mongo owns couch, btw)
